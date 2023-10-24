@@ -1,0 +1,12 @@
+@()
+
+@main("counter"){
+    <h2>
+        This is our counter:
+    </h2>
+    <p id = "paragraph">
+        Click this to increment our counter: <span id = "number"> 1 </span>
+    </p>
+
+    <script src="@routes.Assets.versioned("javascript/basicStuff.js")"></script>
+}

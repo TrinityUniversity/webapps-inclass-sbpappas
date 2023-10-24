@@ -7,6 +7,9 @@ GET        /                             controllers.Application.index
 GET        /test1                        controllers.Test1.form
 + nocsrf
 POST       /form                         controllers.Test1.submit
+GET        /counter                      controllers.Counter.counter
+GET        /increment                    controllers.Counter.increment
+GET        /react           controllers.ReactController.load
 
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)
