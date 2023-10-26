@@ -21,7 +21,25 @@ class Hello extends React.Component {
     }
   }
   
+  class SimpleForm extends React.Component {
+    constructor(props){
+      super(props);
+      this.state = {textInput: ""}
+    }
+
+    render(){
+      return ce('input', {type: "text", value: this.state.textInput, onChange: (e) => this.changeHandler(e)});
+    }
+
+    changeHandler(e) {
+      this.setState({textInput: event.target.value});
+    }
+  }
+
   ReactDOM.render(
-    ce('div', null, ce(StatelessHello, {toWhat: 'Web Apps'}), ce(Hello, {toWhat: 'Web Apps'}, null)),
+    ce('div', null, 
+      ce(StatelessHello, {toWhat: 'Web Apps'}), 
+      ce(Hello, {toWhat: 'Web Apps'}), 
+      ce(SimpleForm, null, null)),
     document.getElementById('react-root')
   );
